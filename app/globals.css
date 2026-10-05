@@ -1,1 +1,45 @@
 @import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter), var(--font-khmer), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), var(--font-khmer), ui-monospace, monospace;
+}
+
+@theme {
+  --animate-cloud-drift: cloud-drift 90s linear infinite;
+  --animate-cloud-float: cloud-float 8s ease-in-out infinite alternate;
+
+  @keyframes cloud-drift {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100vw);
+    }
+  }
+
+  @keyframes cloud-float {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-14px);
+    }
+  }
+}
+
+/* Khmer typography: needs taller line-height and no letter-spacing
+   (tracking splits stacked consonant clusters). */
+html:lang(km) * {
+  letter-spacing: normal;
+}
+
+html:lang(km) body {
+  line-height: 1.8;
+}
+
+html:lang(km) :is(h1, h2, h3) {
+  line-height: 1.5;
+}
