@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
-import { Mail, MapPin, Send, CheckCircle2, Clock } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2, Clock, Phone, Loader2, AlertCircle } from "lucide-react";
 import { ContactData } from "@/types/portfolio";
 import { slideIn } from "@/lib/motion";
 
@@ -10,6 +10,8 @@ const iconMap = {
   Mail,
   MapPin,
   Clock,
+  Phone,
+  Send,
 };
 
 function GithubIcon({ className = "h-5 w-5" }: { className?: string }) {
@@ -32,12 +34,46 @@ function LinkedinIcon({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
+function TelegramIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+    </svg>
+  );
+}
+
+function InstagramIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.415.56.217.96.477 1.382.896.419.42.679.822.896 1.381.164.422.36 1.057.413 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.413 2.227-.218.56-.477.96-.896 1.382-.42.419-.822.679-1.382.896-.422.164-1.057.36-2.227.413-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.413-.56-.218-.96-.477-1.381-.896a3.72 3.72 0 0 1-.896-1.382c-.164-.422-.36-1.057-.413-2.227-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.413-2.227.217-.56.477-.96.896-1.381.42-.419.822-.679 1.381-.896.422-.164 1.057-.36 2.227-.413 1.266-.058 1.646-.07 4.85-.07M12 0C8.741 0 8.333.014 7.053.072 5.775.131 4.902.333 4.14.63a5.88 5.88 0 0 0-2.126 1.384A5.88 5.88 0 0 0 .63 4.14C.333 4.902.131 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.668.072 4.948c.059 1.277.261 2.15.558 2.913a5.88 5.88 0 0 0 1.384 2.126A5.88 5.88 0 0 0 4.14 23.37c.763.297 1.636.499 2.913.558C8.333 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.277-.059 2.15-.261 2.913-.558a5.88 5.88 0 0 0 2.126-1.384 5.88 5.88 0 0 0 1.384-2.126c.297-.763.499-1.636.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.668-.072-4.948c-.059-1.277-.261-2.15-.558-2.913a5.88 5.88 0 0 0-1.384-2.126A5.88 5.88 0 0 0 19.86.63C19.097.333 18.224.131 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+    </svg>
+  );
+}
+
+function FacebookIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
+const socialIconMap = {
+  GitHub: GithubIcon,
+  LinkedIn: LinkedinIcon,
+  Telegram: TelegramIcon,
+  Instagram: InstagramIcon,
+  Facebook: FacebookIcon,
+};
+
 interface ContactProps {
   data: ContactData;
 }
 
 export default function Contact({ data }: ContactProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,10 +81,36 @@ export default function Contact({ data }: ContactProps) {
     message: "",
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
+
+    setLoading(true);
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(result.error || "Failed to send message");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Failed to send message. Please try again or reach out on Telegram directly.";
+      setErrorMessage(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -92,6 +154,10 @@ export default function Contact({ data }: ContactProps) {
                         {item.href ? (
                           <a
                             href={item.href}
+                            {...(item.href.startsWith("http") && {
+                              target: "_blank",
+                              rel: "noopener noreferrer",
+                            })}
                             className="break-all text-sm font-medium hover:text-primary-600 transition-colors dark:hover:text-primary-300"
                           >
                             {item.value}
@@ -111,8 +177,7 @@ export default function Contact({ data }: ContactProps) {
               <p className="text-xs font-mono uppercase tracking-wider text-zinc-500">Find me on</p>
               <div className="mt-4 flex items-center gap-3">
                 {data.socials.map((social) => {
-                  const isGithub = social.platform === "GitHub";
-                  const Icon = isGithub ? GithubIcon : LinkedinIcon;
+                  const Icon = socialIconMap[social.platform] || GithubIcon;
                   return (
                     <a
                       key={social.platform}
@@ -231,12 +296,29 @@ export default function Contact({ data }: ContactProps) {
                   />
                 </div>
 
+                {errorMessage && (
+                  <div className="flex items-center gap-2 rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-xs text-red-600 dark:text-red-400">
+                    <AlertCircle className="h-4 w-4 shrink-0" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary-600 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-400/20 active:scale-95"
+                  disabled={loading}
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary-600 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-400/20 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <span>{data.form.submitButton}</span>
-                  <Send className="h-4 w-4" />
+                  {loading ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>{data.form.submitButton}</span>
+                      <Send className="h-4 w-4" />
+                    </>
+                  )}
                 </button>
               </form>
             )}

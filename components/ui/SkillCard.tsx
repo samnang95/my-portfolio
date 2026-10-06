@@ -1,14 +1,17 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Smartphone, Server, Wrench } from "lucide-react";
+import { Smartphone, Server, Wrench, Globe, Code2, Layers } from "lucide-react";
 import { SkillCategory } from "@/types/portfolio";
-import { slideIn, gridDirection } from "@/lib/motion";
+import { slideIn } from "@/lib/motion";
 
 const iconMap = {
   Smartphone,
   Server,
   Wrench,
+  Globe,
+  Code2,
+  Layers,
 };
 
 interface SkillCardProps {
@@ -21,7 +24,8 @@ export default function SkillCard({ category, index }: SkillCardProps) {
 
   return (
     <motion.div
-      {...slideIn(gridDirection(index), (index % 3) * 0.12)}
+      {...slideIn("up", (index % 4) * 0.1)}
+      whileHover={{ y: -6 }}
       className="group relative flex flex-col rounded-3xl border border-zinc-200/90 bg-white/80 p-8 shadow-sm backdrop-blur-sm transition-[border-color,background-color,box-shadow] hover:border-primary-500/40 hover:shadow-md dark:border-zinc-800/80 dark:bg-zinc-900/30 dark:hover:border-primary-400/40 dark:hover:bg-zinc-900/60"
     >
       {/* Category Header */}

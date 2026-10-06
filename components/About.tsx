@@ -1,7 +1,19 @@
 "use client";
 
 import { motion } from "motion/react";
-import { CheckCircle2, ShieldCheck, Zap, Sparkles } from "lucide-react";
+import {
+  CheckCircle2,
+  ShieldCheck,
+  Zap,
+  Sparkles,
+  BookOpen,
+  Headphones,
+  Gamepad2,
+  Code2,
+  Rocket,
+  Dumbbell,
+  Languages,
+} from "lucide-react";
 import { AboutData } from "@/types/portfolio";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { slideIn } from "@/lib/motion";
@@ -10,6 +22,15 @@ const iconMap = {
   Zap,
   ShieldCheck,
   Sparkles,
+};
+
+const freeTimeIconMap = {
+  BookOpen,
+  Headphones,
+  Gamepad2,
+  Code2,
+  Rocket,
+  Dumbbell,
 };
 
 interface AboutProps {
@@ -46,6 +67,67 @@ export default function About({ data }: AboutProps) {
                 </div>
               ))}
             </div>
+
+            {/* When I'm Free / Outside of Work */}
+            {data.freeTime && (
+              <div className="mt-2 rounded-2xl border border-zinc-200/90 bg-white/70 p-5 shadow-xs backdrop-blur-sm dark:border-zinc-800/80 dark:bg-zinc-900/30">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-300">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  <span>{data.freeTime.title}</span>
+                </div>
+                <div className="mt-3.5 flex flex-wrap gap-2.5">
+                  {data.freeTime.activities.map((act, actIdx) => {
+                    const ActIcon = freeTimeIconMap[act.iconName] || BookOpen;
+                    return (
+                      <span
+                        key={actIdx}
+                        className="inline-flex items-center gap-2 rounded-xl border border-zinc-200/90 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 shadow-xs transition-all hover:border-primary-500/50 hover:text-primary-600 dark:border-zinc-800 dark:bg-zinc-950/80 dark:text-zinc-300 dark:hover:border-primary-400/50 dark:hover:text-primary-300"
+                      >
+                        <ActIcon className="h-3.5 w-3.5 text-primary-600 dark:text-primary-300" />
+                        <span>{act.label}</span>
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Spoken Languages */}
+            {data.languages && (
+              <div className="mt-1 rounded-2xl border border-zinc-200/90 bg-white/70 p-5 shadow-xs backdrop-blur-sm dark:border-zinc-800/80 dark:bg-zinc-900/30">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-300">
+                  <Languages className="h-3.5 w-3.5" />
+                  <span>{data.languages.title}</span>
+                </div>
+                <div className="mt-3.5 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {data.languages.items.map((lang, langIdx) => (
+                    <div
+                      key={langIdx}
+                      className="rounded-xl border border-zinc-200/90 bg-white p-3.5 shadow-xs dark:border-zinc-800 dark:bg-zinc-950/80"
+                    >
+                      <div className="flex items-center justify-between text-xs font-medium">
+                        <span className="font-semibold text-zinc-900 dark:text-white">
+                          {lang.name}
+                        </span>
+                        <span className="font-mono font-bold text-primary-600 dark:text-primary-400">
+                          {lang.score}
+                        </span>
+                      </div>
+                      <div className="mt-0.5 text-[11px] text-zinc-500 dark:text-zinc-400">
+                        {lang.level}
+                      </div>
+                      {/* Rating Progress Bar */}
+                      <div className="mt-2.5 h-1.5 w-full rounded-full bg-zinc-100 overflow-hidden dark:bg-zinc-800">
+                        <div
+                          className="h-full rounded-full bg-gradient-to-r from-primary-600 to-primary-400 transition-all duration-500"
+                          style={{ width: `${lang.percentage}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </motion.div>
 
           {/* Highlights & Pillars */}
@@ -56,8 +138,9 @@ export default function About({ data }: AboutProps) {
             {data.pillars.map((pillar, index) => {
               const Icon = iconMap[pillar.iconName] || Zap;
               return (
-                <div
+                <motion.div
                   key={index}
+                  whileHover={{ y: -4 }}
                   className="group rounded-2xl border border-zinc-200/90 bg-white/80 p-6 shadow-sm transition-all hover:border-primary-500/40 hover:shadow-md dark:border-zinc-800/90 dark:bg-zinc-900/30 dark:hover:border-primary-400/40 dark:hover:bg-zinc-900/60"
                 >
                   <div className="flex items-center gap-3">
@@ -71,7 +154,7 @@ export default function About({ data }: AboutProps) {
                   <p className="mt-3 text-sm text-zinc-600 leading-relaxed dark:text-zinc-400">
                     {pillar.description}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </motion.div>

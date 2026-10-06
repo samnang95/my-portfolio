@@ -7,6 +7,16 @@
   --font-mono: var(--font-geist-mono), var(--font-khmer), ui-monospace, monospace;
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
+/* Hide Next.js dev indicators and overlays */
+nextjs-portal {
+  display: none !important;
+}
+
 /* Brand colour: Deep Purple. Change these to re-theme the whole site. */
 @theme {
   --color-primary-50: #ede7f6;

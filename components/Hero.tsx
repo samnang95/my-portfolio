@@ -2,15 +2,19 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowDown, Download, Sparkles, Smartphone, Layers, Server, Code2 } from "lucide-react";
+import { ArrowDown, Download, Sparkles, Smartphone, Layers, Server, Code2, Briefcase, GraduationCap, Clock } from "lucide-react";
 import { HeroData } from "@/types/portfolio";
 import { images } from "@/assets";
+import { slideIn } from "@/lib/motion";
 
 const iconMap = {
   Smartphone,
   Layers,
   Server,
   Code2,
+  Briefcase,
+  GraduationCap,
+  Clock,
 };
 
 interface HeroProps {
@@ -63,7 +67,7 @@ export default function Hero({ data }: HeroProps) {
                 className="text-4xl font-extrabold leading-[1.15] tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl dark:text-white"
               >
                 Hi, I&apos;m{" "}
-                <span className="text-primary-600 underline decoration-primary-500/40 decoration-wavy decoration-2 underline-offset-8 dark:text-primary-300 dark:decoration-primary-400/40">
+                <span className="text-primary-600 dark:text-primary-300">
                   {data.name}
                 </span>
                 .
@@ -76,7 +80,11 @@ export default function Hero({ data }: HeroProps) {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="mt-6 max-w-2xl text-lg text-zinc-600 sm:text-xl md:text-2xl font-light leading-relaxed dark:text-zinc-400"
               >
-                <span className="font-semibold text-zinc-900 dark:text-zinc-200">{data.role}</span>{" "}
+                {data.role ? (
+                  <>
+                    <span className="font-semibold text-zinc-900 dark:text-zinc-200">{data.role}</span>{" "}
+                  </>
+                ) : null}
                 {data.description}
               </motion.p>
 
@@ -143,21 +151,18 @@ export default function Hero({ data }: HeroProps) {
           </div>
 
           {/* Highlights */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-16 grid w-full grid-cols-2 gap-4 sm:grid-cols-4"
-          >
-            {data.highlights.map((item) => {
+          <div className="mt-16 grid w-full grid-cols-2 gap-4 sm:grid-cols-4">
+            {data.highlights.map((item, idx) => {
               const Icon = iconMap[item.iconName] || Smartphone;
               return (
-                <div
+                <motion.div
                   key={item.title}
-                  className="rounded-2xl border border-zinc-200/90 bg-white/80 p-4 shadow-sm backdrop-blur-sm transition-all hover:border-zinc-300 dark:border-zinc-800/80 dark:bg-zinc-900/40 dark:hover:border-zinc-700"
+                  {...slideIn("up", idx * 0.1)}
+                  whileHover={{ y: -5 }}
+                  className="group rounded-2xl border border-zinc-200/90 bg-white/80 p-4 shadow-sm backdrop-blur-sm transition-[border-color,background-color,box-shadow] hover:border-primary-500/40 hover:shadow-md dark:border-zinc-800/80 dark:bg-zinc-900/40 dark:hover:border-primary-400/40 dark:hover:bg-zinc-900/60"
                 >
-                  <div className="flex items-center gap-2 text-primary-600 dark:text-primary-300">
-                    <Icon className="h-5 w-5" />
+                  <div className="flex items-center gap-2 text-primary-600 transition-colors group-hover:text-primary-500 dark:text-primary-300 dark:group-hover:text-primary-200">
+                    <Icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                     <span className="text-xs font-mono font-medium text-zinc-500 uppercase dark:text-zinc-400">
                       {item.label}
                     </span>
@@ -166,10 +171,10 @@ export default function Hero({ data }: HeroProps) {
                     {item.title}
                   </p>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">{item.subtitle}</p>
-                </div>
+                </motion.div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

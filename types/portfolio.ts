@@ -9,7 +9,7 @@ export interface HeroHighlight {
   label: string;
   title: string;
   subtitle: string;
-  iconName: "Smartphone" | "Layers" | "Server" | "Code2";
+  iconName: "Smartphone" | "Layers" | "Server" | "Code2" | "Briefcase" | "GraduationCap" | "Clock";
 }
 
 export interface HeroData {
@@ -39,12 +39,32 @@ export interface AboutPillar {
   iconName: "Zap" | "ShieldCheck" | "Sparkles";
 }
 
+export interface FreeTimeActivity {
+  label: string;
+  iconName: "BookOpen" | "Headphones" | "Gamepad2" | "Code2" | "Rocket" | "Dumbbell";
+}
+
+export interface SpokenLanguage {
+  name: string;
+  level: string;
+  score: string;
+  percentage: number;
+}
+
 export interface AboutData {
   badge: string;
   heading: string;
   paragraphs: string[];
   keyPoints: string[];
   pillars: AboutPillar[];
+  freeTime?: {
+    title: string;
+    activities: FreeTimeActivity[];
+  };
+  languages?: {
+    title: string;
+    items: SpokenLanguage[];
+  };
 }
 
 export interface SkillItem {
@@ -55,7 +75,7 @@ export interface SkillItem {
 export interface SkillCategory {
   title: string;
   description: string;
-  iconName: "Smartphone" | "Server" | "Wrench";
+  iconName: "Smartphone" | "Server" | "Wrench" | "Globe" | "Code2" | "Layers";
   skills: SkillItem[];
 }
 
@@ -86,11 +106,11 @@ export interface ContactInfoItem {
   label: string;
   value: string;
   href?: string;
-  iconName: "Mail" | "MapPin" | "Clock";
+  iconName: "Mail" | "Phone" | "Send" | "MapPin" | "Clock";
 }
 
 export interface SocialLink {
-  platform: "GitHub" | "LinkedIn";
+  platform: "GitHub" | "LinkedIn" | "Telegram" | "Instagram" | "Facebook";
   url: string;
 }
 
@@ -154,7 +174,7 @@ export interface PortfolioContent {
   contact: ContactData;
   footer: {
     allRightsReserved: string;
-    styledWith: string;
+    builtWith: string;
     backToTop: string;
   };
 }

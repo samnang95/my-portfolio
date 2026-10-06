@@ -23,6 +23,7 @@ export default function Footer({ brand, links, footerData }: FooterProps) {
             <div className="flex items-center text-lg font-bold text-zinc-900 dark:text-white">
               <span>{brand.name}</span>
               <span className="text-primary-500 dark:text-primary-300">.</span>
+              <span className="ml-1.5">{brand.tag}</span>
             </div>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
               {brand.subtitle}
@@ -57,12 +58,12 @@ export default function Footer({ brand, links, footerData }: FooterProps) {
 
         {/* Bottom bar */}
         <div className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
-          <p>© {new Date().getFullYear()} {brand.name}. {footerData.allRightsReserved}</p>
-          <p className="flex items-center gap-2">
-            <span>{footerData.styledWith}</span>
-            <span className="text-zinc-800 font-medium dark:text-zinc-300">Tailwind CSS</span>
+          <p>© {new Date().getFullYear()} {brand.name}. {brand.tag} • {footerData.allRightsReserved}</p>
+          <p className="flex items-center gap-1.5">
+            <span>{footerData.builtWith}</span>
+            <span className="text-zinc-800 font-medium dark:text-zinc-300">Next.js</span>
             <span>&</span>
-            <span className="text-primary-600 font-medium dark:text-primary-300">Motion</span>
+            <span className="text-primary-600 font-medium dark:text-primary-300">Tailwind CSS</span>
           </p>
         </div>
       </div>
