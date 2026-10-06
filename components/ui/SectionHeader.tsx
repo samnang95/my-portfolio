@@ -23,7 +23,7 @@ export default function SectionHeader({
       {...slideIn(isCenter ? "up" : "left")}
       className={`flex flex-col gap-3 ${isCenter ? "items-center text-center" : "items-start text-left"}`}
     >
-      <span className="text-xs font-semibold uppercase tracking-[0.25em] text-lime-600 dark:text-lime-400">
+      <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary-600 dark:text-primary-300">
         {badge}
       </span>
       <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">

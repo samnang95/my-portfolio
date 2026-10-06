@@ -37,7 +37,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${geistMono.variable} ${hanuman.variable} h-full antialiased scroll-smooth dark`}
     >
-      <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900 transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100 selection:bg-lime-400 selection:text-black">
+      <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900 transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100 selection:bg-primary-500 selection:text-white">
         {children}
       </body>
     </html>

@@ -16,7 +16,7 @@ export default function PortfolioView() {
   const { content } = useLanguage();
 
   return (
-    <div className="relative min-h-screen flex flex-col overflow-x-clip bg-zinc-50 font-sans text-zinc-900 antialiased selection:bg-lime-400 selection:text-black transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100">
+    <div className="relative min-h-screen flex flex-col overflow-x-clip bg-zinc-50 font-sans text-zinc-900 antialiased selection:bg-primary-500 selection:text-white transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100">
       {/* Animated backgrounds: clouds in light mode, falling stars in dark mode */}
       <SkyClouds />
       <FallingStars />

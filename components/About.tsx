@@ -41,7 +41,7 @@ export default function About({ data }: AboutProps) {
                   key={idx}
                   className="flex items-center gap-2 text-sm text-zinc-800 dark:text-zinc-300"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-lime-600 dark:text-lime-400" />
+                  <CheckCircle2 className="h-4 w-4 text-primary-600 dark:text-primary-300" />
                   <span>{point}</span>
                 </div>
               ))}
@@ -58,10 +58,10 @@ export default function About({ data }: AboutProps) {
               return (
                 <div
                   key={index}
-                  className="group rounded-2xl border border-zinc-200/90 bg-white/80 p-6 shadow-sm transition-all hover:border-lime-500/40 hover:shadow-md dark:border-zinc-800/90 dark:bg-zinc-900/30 dark:hover:border-lime-400/40 dark:hover:bg-zinc-900/60"
+                  className="group rounded-2xl border border-zinc-200/90 bg-white/80 p-6 shadow-sm transition-all hover:border-primary-500/40 hover:shadow-md dark:border-zinc-800/90 dark:bg-zinc-900/30 dark:hover:border-primary-400/40 dark:hover:bg-zinc-900/60"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-lime-500/10 text-lime-600 transition-colors group-hover:bg-lime-400 group-hover:text-black dark:bg-lime-400/10 dark:text-lime-400">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-500/10 text-primary-600 transition-colors group-hover:bg-primary-600 group-hover:text-white dark:bg-primary-400/10 dark:text-primary-300">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="font-semibold text-zinc-900 text-base dark:text-white">

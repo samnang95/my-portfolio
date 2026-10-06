@@ -26,6 +26,10 @@ export interface HeroData {
     label: string;
     href: string;
   };
+  cvCta: {
+    label: string;
+    href: string;
+  };
   highlights: HeroHighlight[];
 }
 

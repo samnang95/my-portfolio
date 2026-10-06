@@ -54,7 +54,7 @@ export default function FallingStars() {
 
     // 1. Initialize static twinkling background stars
     let stars: Star[] = [];
-    const colors = ["#ffffff", "#fef08a", "#a3e635", "#bae6fd"];
+    const colors = ["#ffffff", "#ede7f6", "#b39ddb", "#bae6fd"];
 
     const initStars = () => {
       stars = [];
@@ -175,9 +175,9 @@ export default function FallingStars() {
 
         const gradient = ctx.createLinearGradient(s.x, s.y, tailX, tailY);
         gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
-        gradient.addColorStop(0.2, "rgba(217, 249, 157, 0.9)"); // Lime-200 accent
-        gradient.addColorStop(0.6, "rgba(163, 230, 53, 0.4)"); // Lime-400
-        gradient.addColorStop(1, "rgba(163, 230, 53, 0)");
+        gradient.addColorStop(0.2, "rgba(209, 196, 233, 0.9)"); // Primary-100 accent
+        gradient.addColorStop(0.6, "rgba(149, 117, 205, 0.4)"); // Primary-300
+        gradient.addColorStop(1, "rgba(149, 117, 205, 0)");
 
         ctx.save();
         ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
@@ -187,7 +187,7 @@ export default function FallingStars() {
 
         // Glow head
         ctx.shadowBlur = 10;
-        ctx.shadowColor = "#a3e635";
+        ctx.shadowColor = "#9575cd";
 
         ctx.beginPath();
         ctx.moveTo(s.x, s.y);

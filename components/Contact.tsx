@@ -64,7 +64,7 @@ export default function Contact({ data }: ContactProps) {
             className="flex flex-col justify-between lg:col-span-5"
           >
             <div>
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-lime-600 dark:text-lime-400">
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary-600 dark:text-primary-300">
                 {data.badge}
               </span>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-white">
@@ -82,7 +82,7 @@ export default function Contact({ data }: ContactProps) {
                       key={item.label}
                       className="flex items-center gap-3 text-zinc-800 dark:text-zinc-300"
                     >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-zinc-100 text-lime-600 border border-zinc-200 dark:bg-zinc-900 dark:text-lime-400 dark:border-zinc-800">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-zinc-100 text-primary-600 border border-zinc-200 dark:bg-zinc-900 dark:text-primary-300 dark:border-zinc-800">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div className="min-w-0">
@@ -92,7 +92,7 @@ export default function Contact({ data }: ContactProps) {
                         {item.href ? (
                           <a
                             href={item.href}
-                            className="break-all text-sm font-medium hover:text-lime-600 transition-colors dark:hover:text-lime-400"
+                            className="break-all text-sm font-medium hover:text-primary-600 transition-colors dark:hover:text-primary-300"
                           >
                             {item.value}
                           </a>
@@ -120,7 +120,7 @@ export default function Contact({ data }: ContactProps) {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${social.platform} profile`}
-                      className="flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-200 bg-white text-zinc-700 shadow-sm transition-all hover:border-lime-500 hover:text-lime-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-lime-400 dark:hover:text-lime-400"
+                      className="flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-200 bg-white text-zinc-700 shadow-sm transition-all hover:border-primary-500 hover:text-primary-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-primary-400 dark:hover:text-primary-300"
                     >
                       <Icon className="h-5 w-5" />
                     </a>
@@ -137,7 +137,7 @@ export default function Contact({ data }: ContactProps) {
           >
             {submitted ? (
               <div className="flex flex-col items-center justify-center py-16 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-lime-500/20 text-lime-600 mb-4 dark:bg-lime-400/20 dark:text-lime-400">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-500/20 text-primary-600 mb-4 dark:bg-primary-400/20 dark:text-primary-300">
                   <CheckCircle2 className="h-8 w-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
@@ -164,7 +164,7 @@ export default function Contact({ data }: ContactProps) {
                       htmlFor="name"
                       className="text-xs font-medium text-zinc-700 dark:text-zinc-300"
                     >
-                      {data.form.nameLabel} <span className="text-lime-600 dark:text-lime-400">*</span>
+                      {data.form.nameLabel} <span className="text-primary-600 dark:text-primary-300">*</span>
                     </label>
                     <input
                       id="name"
@@ -173,7 +173,7 @@ export default function Contact({ data }: ContactProps) {
                       placeholder={data.form.namePlaceholder}
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none transition focus:border-lime-500 focus:ring-1 focus:ring-lime-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:placeholder-zinc-600 dark:focus:border-lime-400 dark:focus:ring-1 dark:focus:ring-lime-400"
+                      className="rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none transition focus:border-primary-500 focus:ring-1 focus:ring-primary-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:placeholder-zinc-600 dark:focus:border-primary-400 dark:focus:ring-1 dark:focus:ring-primary-400"
                     />
                   </div>
 
@@ -182,7 +182,7 @@ export default function Contact({ data }: ContactProps) {
                       htmlFor="email"
                       className="text-xs font-medium text-zinc-700 dark:text-zinc-300"
                     >
-                      {data.form.emailLabel} <span className="text-lime-600 dark:text-lime-400">*</span>
+                      {data.form.emailLabel} <span className="text-primary-600 dark:text-primary-300">*</span>
                     </label>
                     <input
                       id="email"
@@ -191,7 +191,7 @@ export default function Contact({ data }: ContactProps) {
                       placeholder={data.form.emailPlaceholder}
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none transition focus:border-lime-500 focus:ring-1 focus:ring-lime-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:placeholder-zinc-600 dark:focus:border-lime-400 dark:focus:ring-1 dark:focus:ring-lime-400"
+                      className="rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none transition focus:border-primary-500 focus:ring-1 focus:ring-primary-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:placeholder-zinc-600 dark:focus:border-primary-400 dark:focus:ring-1 dark:focus:ring-primary-400"
                     />
                   </div>
                 </div>
@@ -209,7 +209,7 @@ export default function Contact({ data }: ContactProps) {
                     placeholder={data.form.subjectPlaceholder}
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none transition focus:border-lime-500 focus:ring-1 focus:ring-lime-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:placeholder-zinc-600 dark:focus:border-lime-400 dark:focus:ring-1 dark:focus:ring-lime-400"
+                    className="rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none transition focus:border-primary-500 focus:ring-1 focus:ring-primary-500 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:placeholder-zinc-600 dark:focus:border-primary-400 dark:focus:ring-1 dark:focus:ring-primary-400"
                   />
                 </div>
 
@@ -218,7 +218,7 @@ export default function Contact({ data }: ContactProps) {
                     htmlFor="message"
                     className="text-xs font-medium text-zinc-700 dark:text-zinc-300"
                   >
-                    {data.form.messageLabel} <span className="text-lime-600 dark:text-lime-400">*</span>
+                    {data.form.messageLabel} <span className="text-primary-600 dark:text-primary-300">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -227,13 +227,13 @@ export default function Contact({ data }: ContactProps) {
                     placeholder={data.form.messagePlaceholder}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none transition focus:border-lime-500 focus:ring-1 focus:ring-lime-500 resize-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:placeholder-zinc-600 dark:focus:border-lime-400 dark:focus:ring-1 dark:focus:ring-lime-400"
+                    className="rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 outline-none transition focus:border-primary-500 focus:ring-1 focus:ring-primary-500 resize-none dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:placeholder-zinc-600 dark:focus:border-primary-400 dark:focus:ring-1 dark:focus:ring-primary-400"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-lime-400 px-6 py-3.5 text-sm font-semibold text-black transition-all hover:bg-lime-300 hover:shadow-lg hover:shadow-lime-400/20 active:scale-95"
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary-600 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary-500 hover:shadow-lg hover:shadow-primary-400/20 active:scale-95"
                 >
                   <span>{data.form.submitButton}</span>
                   <Send className="h-4 w-4" />

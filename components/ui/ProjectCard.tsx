@@ -27,25 +27,25 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     <motion.article
       {...slideIn(gridDirection(index), (index % 3) * 0.12)}
       whileHover={{ y: -6 }}
-      className="group relative flex flex-col justify-between rounded-3xl border border-zinc-200/90 bg-white/80 p-7 shadow-sm backdrop-blur-sm transition-[border-color,background-color,box-shadow] hover:border-lime-500/50 hover:shadow-md dark:border-zinc-800/80 dark:bg-zinc-900/30 dark:hover:border-lime-400/50 dark:hover:bg-zinc-900/60"
+      className="group relative flex flex-col justify-between rounded-3xl border border-zinc-200/90 bg-white/80 p-7 shadow-sm backdrop-blur-sm transition-[border-color,background-color,box-shadow] hover:border-primary-500/50 hover:shadow-md dark:border-zinc-800/80 dark:bg-zinc-900/30 dark:hover:border-primary-400/50 dark:hover:bg-zinc-900/60"
     >
       <div>
         {/* Header Badge */}
         <div className="flex items-center justify-between">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-lime-500/30 bg-lime-500/10 px-3 py-1 text-[11px] font-semibold text-lime-700 dark:border-lime-400/20 dark:bg-lime-400/10 dark:text-lime-400">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary-500/30 bg-primary-500/10 px-3 py-1 text-[11px] font-semibold text-primary-700 dark:border-primary-400/20 dark:bg-primary-400/10 dark:text-primary-300">
             <Smartphone className="h-3 w-3" />
             <span>{project.category}</span>
           </span>
           {project.featured && (
             <span className="flex items-center gap-1 text-[11px] font-mono text-zinc-500 dark:text-zinc-400">
-              <Sparkles className="h-3 w-3 text-lime-600 dark:text-lime-400" />
+              <Sparkles className="h-3 w-3 text-primary-600 dark:text-primary-300" />
               Featured
             </span>
           )}
         </div>
 
         {/* Project Title */}
-        <h3 className="mt-5 text-xl font-bold text-zinc-900 transition-colors group-hover:text-lime-600 dark:text-white dark:group-hover:text-lime-400">
+        <h3 className="mt-5 text-xl font-bold text-zinc-900 transition-colors group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-300">
           {project.title}
         </h3>
 
@@ -85,7 +85,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-700 transition-colors hover:text-lime-600 dark:text-zinc-300 dark:hover:text-lime-400"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-700 transition-colors hover:text-primary-600 dark:text-zinc-300 dark:hover:text-primary-300"
           >
             <GithubIcon className="h-4 w-4" />
             <span>Repository</span>
@@ -96,7 +96,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View ${project.title} on GitHub`}
-            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200 bg-zinc-100 text-zinc-700 transition-all group-hover:border-lime-500/50 group-hover:text-lime-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:group-hover:border-lime-400/50 dark:group-hover:text-lime-400"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200 bg-zinc-100 text-zinc-700 transition-all group-hover:border-primary-500/50 group-hover:text-primary-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:group-hover:border-primary-400/50 dark:group-hover:text-primary-300"
           >
             <ArrowUpRight className="h-4 w-4" />
           </a>

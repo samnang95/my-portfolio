@@ -31,6 +31,10 @@ export const kmContent: PortfolioContent = {
       label: "ទាក់ទងមកខ្ញុំ",
       href: "#contact",
     },
+    cvCta: {
+      label: "ទាញយក CV",
+      href: "/cv/samnang-rin-cv.pdf",
+    },
     highlights: [
       {
         iconName: "Smartphone",

@@ -37,7 +37,7 @@ export default function Projects({
             href="https://github.com/samnang95"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-700 transition-colors hover:text-lime-600 dark:text-zinc-300 dark:hover:text-lime-400 shrink-0"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-700 transition-colors hover:text-primary-600 dark:text-zinc-300 dark:hover:text-primary-300 shrink-0"
           >
             <span>{exploreGithub}</span>
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -22,7 +22,7 @@ export default function Footer({ brand, links, footerData }: FooterProps) {
           <div className="flex flex-col gap-1">
             <div className="flex items-center text-lg font-bold text-zinc-900 dark:text-white">
               <span>{brand.name}</span>
-              <span className="text-lime-500 dark:text-lime-400">.</span>
+              <span className="text-primary-500 dark:text-primary-300">.</span>
             </div>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
               {brand.subtitle}
@@ -35,7 +35,7 @@ export default function Footer({ brand, links, footerData }: FooterProps) {
               <a
                 key={link.name}
                 href={link.href}
-                className="hover:text-lime-600 transition-colors dark:hover:text-lime-400"
+                className="hover:text-primary-600 transition-colors dark:hover:text-primary-300"
               >
                 {link.name}
               </a>
@@ -47,7 +47,7 @@ export default function Footer({ brand, links, footerData }: FooterProps) {
             <button
               onClick={scrollToTop}
               aria-label={footerData.backToTop}
-              className="group inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-100 px-4 py-2 text-xs font-medium text-zinc-700 transition-all hover:border-lime-500/50 hover:text-lime-600 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-300 dark:hover:border-lime-400/50 dark:hover:text-lime-400"
+              className="group inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-100 px-4 py-2 text-xs font-medium text-zinc-700 transition-all hover:border-primary-500/50 hover:text-primary-600 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-300 dark:hover:border-primary-400/50 dark:hover:text-primary-300"
             >
               <span>{footerData.backToTop}</span>
               <ArrowUp className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5" />
@@ -62,7 +62,7 @@ export default function Footer({ brand, links, footerData }: FooterProps) {
             <span>{footerData.styledWith}</span>
             <span className="text-zinc-800 font-medium dark:text-zinc-300">Tailwind CSS</span>
             <span>&</span>
-            <span className="text-lime-600 font-medium dark:text-lime-400">Motion</span>
+            <span className="text-primary-600 font-medium dark:text-primary-300">Motion</span>
           </p>
         </div>
       </div>

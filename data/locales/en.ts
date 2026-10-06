@@ -31,6 +31,10 @@ export const enContent: PortfolioContent = {
       label: "Contact Me",
       href: "#contact",
     },
+    cvCta: {
+      label: "Download CV",
+      href: "/cv/samnang-rin-cv.pdf",
+    },
     highlights: [
       {
         iconName: "Smartphone",
