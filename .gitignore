@@ -46,3 +46,6 @@ CLAUDE.md
 
 # agent rules
 .agents/
+
+# original source photos (not used by the site)
+assets/images/*-original.*
