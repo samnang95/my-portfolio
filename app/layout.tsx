@@ -21,9 +21,9 @@ const hanuman = Hanuman({
 });
 
 export const metadata: Metadata = {
-  title: "Samnang - Portfolio",
+  title: "Rin Samnang - Portfolio",
   description:
-    "Portfolio of Samnang, a Flutter Developer building high-performance mobile apps and scalable backend systems.",
+    "Portfolio of Rin Samnang, a Mobile Developer building high-performance mobile apps and scalable backend systems.",
 };
 
 export default function RootLayout({

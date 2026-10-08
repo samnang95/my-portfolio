@@ -19,7 +19,8 @@ export const enContent: PortfolioContent = {
   hero: {
     badge: "Available for new projects & roles",
     overline: "Developer Portfolio",
-    name: "Samnang",
+    greeting: "Hi, I'm",
+    name: "Rin Samnang",
     role: "",
     description: "My name is Rin Samnang. I am 23 years old and currently single. I work as a Mobile Developer at LTNG Business. I graduated from the Royal University of Phnom Penh (RUPP) in July 2025 with a degree in Information Technology Engineering (ITE).",
     primaryCta: {

@@ -66,11 +66,11 @@ export default function Hero({ data }: HeroProps) {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="text-4xl font-extrabold leading-[1.15] tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl dark:text-white"
               >
-                Hi, I&apos;m{" "}
+                {data.greeting || "Hi, I'm"}{" "}
                 <span className="text-primary-600 dark:text-primary-300">
                   {data.name}
                 </span>
-                .
+                {data.greeting?.startsWith("សួស្តី") ? "" : "."}
               </motion.h1>
 
               {/* Subheading */}

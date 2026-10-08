@@ -15,6 +15,7 @@ export interface HeroHighlight {
 export interface HeroData {
   badge: string;
   overline: string;
+  greeting?: string;
   name: string;
   role: string;
   description: string;
